@@ -10,6 +10,7 @@ class RecipeSerializer(serializers.ModelSerializer):
 
     author_id = serializers.PrimaryKeyRelatedField(
         queryset=Author.objects.all(),
+        source='author',
     )
 
     class Meta:
