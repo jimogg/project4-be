@@ -17,3 +17,11 @@ class RecipeSerializer(serializers.ModelSerializer):
         fields = '__all__'
         # fields = ('id', 'title', 'subtitle', 'intro',
         #           'steps', 'summary', 'likes', 'comments')
+
+
+class AuthorSerializer(serializers.ModelSerializer):
+    recipipes = RecipeSerializer(many=True, read_only=True,)
+
+    class Meta:
+        model = Author
+        fields = ('name', 'recipies',)
