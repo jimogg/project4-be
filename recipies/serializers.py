@@ -21,7 +21,7 @@ class RecipeSerializer(serializers.ModelSerializer):
 
 
 class AuthorSerializer(serializers.ModelSerializer):
-    recipipes = RecipeSerializer(many=True, read_only=True,)
+    recipies = RecipeSerializer(many=True, read_only=True,)
 
     class Meta:
         model = Author
