@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Author(models.Model):
+class Chef(models.Model):
     name = models.CharField(max_length=100)
     about = models.CharField(max_length=500, blank=True)
 
@@ -12,8 +12,8 @@ class Author(models.Model):
 class Recipe(models.Model):
     title = models.CharField(max_length=600)
     subtitle = models.CharField(max_length=600)
-    author = models.ForeignKey(
-        Author, on_delete=models.CASCADE, related_name='recipies')
+    chef = models.ForeignKey(
+        Chef, on_delete=models.CASCADE, related_name='recipies')
     intro = models.CharField(max_length=600)
     steps = models.CharField(max_length=600)
     summary = models.CharField(max_length=600)

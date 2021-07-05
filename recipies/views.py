@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Recipe, Author
-from .serializers import RecipeSerializer, AuthorSerializer
+from .models import Recipe, Chef
+from .serializers import RecipeSerializer, ChefSerializer
 
 
 class RecipeViewSet(viewsets.ModelViewSet):
@@ -9,6 +9,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
     serializer_class = RecipeSerializer
 
 
-class AuthorViewSet(viewsets.ModelViewSet):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
+class ChefViewSet(viewsets.ModelViewSet):
+    queryset = Chef.objects.all()
+    serializer_class = ChefSerializer

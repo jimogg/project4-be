@@ -1,16 +1,16 @@
 from rest_framework import serializers
-from .models import Recipe, Author
+from .models import Recipe, Chef
 
 
 class RecipeSerializer(serializers.ModelSerializer):
-    author_name = serializers.StringRelatedField(
-        source='author',
+    chef_name = serializers.StringRelatedField(
+        source='chef',
         read_only=True,
     )
 
-    author_id = serializers.PrimaryKeyRelatedField(
-        queryset=Author.objects.all(),
-        source='author',
+    chef_id = serializers.PrimaryKeyRelatedField(
+        queryset=Chef.objects.all(),
+        source='chef',
     )
 
     class Meta:
@@ -20,9 +20,9 @@ class RecipeSerializer(serializers.ModelSerializer):
         #           'steps', 'summary', 'likes', 'comments')
 
 
-class AuthorSerializer(serializers.ModelSerializer):
+class ChefSerializer(serializers.ModelSerializer):
     recipies = RecipeSerializer(many=True, read_only=True,)
 
     class Meta:
-        model = Author
+        model = Chef
         fields = ('name', 'recipies',)
