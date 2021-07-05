@@ -10,6 +10,7 @@ media
 
 Pipfile.lock
 
+# MacOS files to ignore
 .DS_Store
 .DocumentRevisions-V100
 .fseventsd
