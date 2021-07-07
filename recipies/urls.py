@@ -5,7 +5,7 @@ from .views import RecipeViewSet, ChefViewSet
 
 router = DefaultRouter()
 
-router.register(r'recipies', RecipeViewSet,  basename='recipe')
+router.register(r'recipes', RecipeViewSet,  basename='recipe')
 router.register(r'chefs', ChefViewSet, basename='chef')
 
 urlpatterns = router.urls
